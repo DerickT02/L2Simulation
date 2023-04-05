@@ -1,36 +1,13 @@
 import turtle
+from screen import Screen
+from massObject import MassObject
+
 
 if __name__ == "__main__":
-    screen = turtle.getscreen()
-    #sun
-    sun = turtle.Turtle()
-    
-    #moon
-    moon = turtle.Turtle()
-  
-    #earth
-    earth = turtle.Turtle()
+    mainScreenObj = Screen()
+    mainScreen = mainScreenObj.getScreen()
 
-
-    #draw masses on screen
-    earth.pencolor("blue")
-    earth.fillcolor("blue")
-    earth.dot(50)
-
-    moon.penup()
-    moon.setpos(50, 50)
-    moon.fillcolor("#CCCCCC")
-    moon.pencolor("#CCCCCC")
-    moon.dot(20)
-
-    sun.penup()
-    sun.setpos(0, -200)
-    sun.pencolor("yellow")
-    sun.fillcolor("yellow")
-    sun.dot(100)
-
-
-    #initialize screen
-    screen.listen()
-    screen.mainloop()
-    
+    sun = MassObject(0, -100, "yellow", 100)
+    earth = MassObject(0, 0, "blue", 20)
+    earth.changePosition(0, -100)
+    mainScreen.mainloop()
