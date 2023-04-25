@@ -11,9 +11,10 @@ class MassObject(turtle.Turtle):
        super().__init__()
        self.color(color)
        self.mass = mass
+       self.position = position
        self.setposition(position)
        self.velocity = velocity
-
+       self.solar_system = solar_system
        self.penup()
        self.hideturtle()
 
@@ -32,7 +33,38 @@ class MassObject(turtle.Turtle):
 
     def move(self):
         self.setx(self.xcor() + self.velocity[0])
-        self.sety(self.ycor() + self.velocity[1])
+        self.sety(self.ycor() + self.velocity[1])   
+
+
+
+    def moonOrbit(self, moon):
+        print("x: ",self.xcor())
+    
+        print("y: ",self.ycor())
+
+            
+            
+
+
+       
+        
+    
+    
+        
+
+      
+        
+    
+        
+            
+      
+        
+
+   
+
+         
+
+        
        
 
 

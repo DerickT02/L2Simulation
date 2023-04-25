@@ -4,9 +4,9 @@ import math
 
 
 class SolarSystem:
-    def __init__(self, width, height):
+    def __init__(self, width, height, x, y):
         self.solar_system = turtle.Screen()
-        self.solar_system.setup(width, height)
+        self.solar_system.setup(width, height, x, y)
         self.bodies = []
         self.solar_system.bgcolor("black")
         self.solar_system.tracer(0)
@@ -37,6 +37,14 @@ class SolarSystem:
             )
 
             reverse = -1
+
+   
+
+    def calculateAllInteractions(self):
+        bodies_copy = self.bodies.copy()
+        for idx, first in enumerate(bodies_copy):
+            for second in bodies_copy[idx + 1:]:
+                self.accelerationDueToGravity(first, second) 
 
 
 
